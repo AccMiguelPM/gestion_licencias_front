@@ -7,6 +7,11 @@ const router = createRouter({
       name: 'monitoring',
       component: () => import('../views/monitoring/Monitoring.vue')
     },
+    {
+      path: '/',
+      name: 'gestion_licencias',
+      component: () => import('../views/GestionLicencias/GestionLicencias.vue')
+    },
   ]
 })
 

@@ -1,5 +1,5 @@
 <template>
-<div>estoy vivo</div>
+<div>Hola mundo</div>
   </template>
   
   <script>

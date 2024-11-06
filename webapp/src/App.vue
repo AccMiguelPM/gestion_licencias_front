@@ -1,7 +1,6 @@
 <script setup>
-import {  ref } from 'vue'
-import { useRouter} from 'vue-router'
-
+import { ref } from 'vue'
+import { useRouter } from 'vue-router'
 
 const section = ref('one')
 const router = useRouter()
@@ -13,10 +12,24 @@ const router = useRouter()
       <q-header elevated class="bg-blue">
         <q-toolbar class="q-ml-md">
           <img src="@/assets/images/bbva-logo.svg" class="bbva-logo" />
-          <q-space />
-          <q-tabs v-model="section" align="right" class="gt-sm">
-            <q-tab name="monitorización" label="monitorización" @click="router.push({name: 'monitoring'})" />
-          </q-tabs>       
+          <!-- Removemos el q-space y cambiamos align a left -->
+          <q-tabs 
+            v-model="section" 
+            align="left" 
+            class="gt-sm q-ml-md" 
+            indicator-color="white"
+          >
+            <q-tab 
+              name="gestion" 
+              label="Gestión de Listas" 
+              @click="router.push({name: 'gestion_licencias'})"
+            />
+            <q-tab 
+              name="monitorización" 
+              label="Monitorización" 
+              @click="router.push({name: 'monitoring'})"
+            />
+          </q-tabs>
         </q-toolbar>
       </q-header>
 
@@ -30,6 +43,7 @@ const router = useRouter()
     </q-layout>
   </div>
 </template>
+
 <style lang="scss">
 #app {
   display: flex;
@@ -39,7 +53,7 @@ const router = useRouter()
   main {
     flex: 1;
     display: flex;
-  place-items: initial;
+    place-items: initial;
   }
 }
 </style>
@@ -51,5 +65,13 @@ const router = useRouter()
   width: 85px;
   height: 26px;
   vertical-align: middle;
+}
+
+// Añadimos estilos para las tabs
+.q-tabs {
+  height: 100%;
+  .q-tab {
+    padding: 0 20px;
+  }
 }
 </style>

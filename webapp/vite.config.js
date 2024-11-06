@@ -13,10 +13,10 @@ export default defineConfig({
         template: { transformAssetUrls}
       }),
       quasar({
-        sassVariables: 'src/quasar-variables.sass'
+        sassVariables: '@/quasar-variables.sass'
       }),
       ViteEjsPlugin({
-        title: "TECHBEAT",
+        title: "GESTIÓN LICENCIAS",
       }),
     ],
     resolve: {
